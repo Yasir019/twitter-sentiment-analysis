@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1 align="center"> Sentiment Analysis</h1>
+    <form action="\Predict" method="post">
+
+        <table align="center">
+
+            <tr>
+                <td>
+                    <label for="comment">Put Your Comment Here...</label><br>
+
+                    <textarea name="comment" rows="8" cols="60"></textarea>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+
+                    <button type="submit" name="submit">Submit Comment</button>
+
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+
+        {% if prediction is defined %}
+            <div class="mt-4">
+                {% if prediction == 1 %}
+                    <div class="alert alert-success" role="alert">Positive comment!</div>
+                {% else %}
+                    <div class="alert alert-danger" role="alert">Negative comment!</div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
