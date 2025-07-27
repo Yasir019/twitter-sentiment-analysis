@@ -4,6 +4,10 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
+nltk.download('stopwords')
+nltk.download('punkt')  # Add if you use tokenization too
+
+
 
 # Load model and vectorizer
 RF = pickle.load(open('sentiment_model.pkl', 'rb'))
